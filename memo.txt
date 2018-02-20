@@ -1,0 +1,43 @@
+Laravel5で都道府県のプルダウンをデータベースから取得する
+https://qiita.com/qwe001/items/3f06ea17e879aee4c63d
+
+マネしてやってみる。
+
+Symfony\Component\Debug\Exception\FatalThrowableError 
+…/storage/framework/views/af4e67734796b76bef05a48f9ca504a3c86a7b6d.php23
+
+Exception message: Class 'Form' not found
+
+---これを試してみる。
+
+http://kz-engineer-scrap.hatenablog.com/entry/2017/03/10/014324
+
+$ composer require laravelcollective/html
+
+vi config/app.php
+
+    'providers' => [
+        Collective\Html\HtmlServiceProvider::class,
+	],
+
+	'aliases' => [
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+	],
+
+
+----
+{{ Form::select の詳しい書き方
+
+http://recipes.laravel.jp/recipe/231
+
+
+---
+https://readouble.com/laravel/5.3/ja/collections.html
+クラスはリファレンスを見ながらでないと使いこなせないね。
+
+Illuminate\Support\Collection
+
+Illuminate\Support\Collectionクラスは配列データを操作するための、書きやすく使いやすいラッパーです。以下の例をご覧ください。配列から新しいコレクションインスタンスを作成するためにcollectヘルパを使用し、各要素に対しstrtoupperを実行し、それから空の要素を削除しています。
+
+
