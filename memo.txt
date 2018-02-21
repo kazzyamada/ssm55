@@ -40,4 +40,9 @@ Illuminate\Support\Collection
 
 Illuminate\Support\Collectionクラスは配列データを操作するための、書きやすく使いやすいラッパーです。以下の例をご覧ください。配列から新しいコレクションインスタンスを作成するためにcollectヘルパを使用し、各要素に対しstrtoupperを実行し、それから空の要素を削除しています。
 
+---
+sql error
+[2018-02-21 12:21:08] staging.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1055 'ssm55.E.id' isn't in GROUP BY (SQL: select E.id, E.title, E.hour, sum(V.task_hour) as man_hour,count(E.id) as days,E.hour-sum(V.task_hour) as remain,E.pre, E.end,E.status from entries as E, tasks as V where E.id = V.entry_id group by V.entry_id order by E.id,E.pre) {"userId":1,"email":"guest@example.com","exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1055 'ssm55.E.id' isn't in GROUP BY (SQL: select E.id, E.title, E.hour, sum(V.task_hour) as man_hour,count(E.id) as days,E.hour-sum(V.task_hour) as remain,E.pre, E.end,E.status from entries as E, tasks as V where E.id = V.entry_id group by V.entry_id order by E.id,E.pre) at /var/www/html/ssm55/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1055 'ssm55.E.id' isn't in GROUP BY at /var/www/html/ssm55/vendor/laravel/framework/src/Illuminate/Database/Connection.php:326)
+[stacktrace]
+
 

@@ -187,33 +187,15 @@ class TaskController extends Controller {
 	public function total()
 	{
         $sql ='select E.id, E.title, E.hour, sum(V.task_hour) as man_hour,count(E.id) as days,E.hour-sum(V.task_hour) as remain,E.pre, E.end,E.status from entries as E, tasks as V where E.id = V.entry_id group by V.entry_id order by E.id,E.pre';
-        $sql2 ='E.id, E.title, E.hour, sum(V.task_hour) as man_hour,E.hour-sum(V.task_hour) as remain,E.pre, E.end,E.status from entries as E, tasks as V where E.id = V.entry_id group by V.entry_id order by E.id,E.pre';
         $totals = DB::select($sql);
-        $day_total=0;
-        $job_hour=0;
-        $man_hour=0;
-        $remain_hour=0;
-        foreach ($totals as $total){
-            $day_total+=$total->days;
-            $job_hour+=$total->hour;
-            $man_hour+=$total->man_hour;
-            $remain_hour+=$total->remain;
-        }
 #        var_dump($totals);
-#        どうやって足す？
-        $obj = new \stdClass;
-        $obj->id = '';
-        $obj->title = '--- total ---';
-        $obj->days = $day_total;
-        $obj->hour = $job_hour;
-        $obj->man_hour = $man_hour;
-        $obj->remain = $remain_hour;
-        $obj->pre = '';
-        $obj->end = '';
-        $obj->status = '';
-        $totals[]=$obj;
-        
-		return view('tasks.total', compact('totals'));
+        $sql_tasks ='select count(id) as days, sum(task_hour) as hour from tasks';
+        $sql_entries ='select sum(hour) as hour from entries';
+        $tasks = DB::select($sql_tasks);
+        $entries = DB::select($sql_entries);
+#        var_dump($tasks);
+#        var_dump($entries);
 
+        return view('tasks.total', compact('totals','entries', 'tasks'));
 	}
 }

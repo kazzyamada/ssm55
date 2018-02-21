@@ -43,6 +43,17 @@
                         <td>{{$total->status}}</td>
                         </tr>
                     @endforeach
+                        <tr>
+                        <td></td>
+                        <td> --- total ---</td>
+                        <td>{{$tasks[0]->days}}</td>
+                        <td>{{$entries[0]->hour}}</td>
+                        <td>{{$tasks[0]->hour}}</td>
+                        <td>{{$entries[0]->hour-$tasks[0]->hour}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        </tr>
                     </tbody>
                 </table>
             @else
