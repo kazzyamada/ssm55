@@ -34,7 +34,7 @@
                                 <td>{{$task->entry->title}}</td>
                     <td>{{$task->log}}</td>
                     <td>{{$task->task_day}}</td>
-                    <td>{{$task->task_hour}}</td>
+                    <td>{{number_format($task->task_hour)}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('tasks.show', $task->id) }}"><i class="glyphicon glyphicon-eye-open"></i> {{ trans('ui.view') }}</a>
                                     <a class="btn btn-xs btn-success" href="{{ route('tasks.copy', $task->id) }}"><i class="glyphicon glyphicon-plus"></i> {{ trans('ui.copy') }}</a>
