@@ -29,7 +29,7 @@
                 </div>
                     <div class="form-group">
                      <label for="hour">HOUR</label>
-                     <p class="form-control-static">{{$entry->hour}}</p>
+                     <p class="form-control-static">{{number_format($entry->hour)}}</p>
                 </div>
                     <div class="form-group">
                      <label for="pre">PRE</label>

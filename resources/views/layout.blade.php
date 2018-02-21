@@ -15,6 +15,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+	<!--
+    <link rel="stylesheet" href="css/app.css"/>
+    <script type="text/javascript">
+        window.Laravel = window.Laravel || {};
+        window.Laravel.csrfToken = "{{csrf_token()}}";
+    </script>
+	 -->
     <!-- <link href="starter-template.css" rel="stylesheet"> -->
 
 
