@@ -34,10 +34,10 @@
                         <tr>
                         <td>{{$total->id}}</td>
                         <td>{{$total->title}}</td>
-                        <td>{{$total->days}}</td>
-                        <td>{{$total->hour}}</td>
-                        <td>{{$total->man_hour}}</td>
-                        <td>{{$total->remain}}</td>
+                        <td>{{number_format($total->days)}}</td>
+                        <td>{{number_format($total->hour)}}</td>
+                        <td>{{number_format($total->man_hour)}}</td>
+                        <td>{{number_format($total->remain)}}</td>
                         <td>{{$total->pre}}</td>
                         <td>{{$total->end}}</td>
                         <td>{{$total->status}}</td>
@@ -46,10 +46,10 @@
                         <tr>
                         <td></td>
                         <td> --- total ---</td>
-                        <td>{{$tasks[0]->days}}</td>
-                        <td>{{$entries[0]->hour}}</td>
-                        <td>{{$tasks[0]->hour}}</td>
-                        <td>{{$entries[0]->hour-$tasks[0]->hour}}</td>
+                        <td>{{number_format($tasks[0]->days)}}</td>
+                        <td>{{number_format($entries[0]->hour)}}</td>
+                        <td>{{number_format($tasks[0]->hour)}}</td>
+                        <td>{{number_format($entries[0]->hour-$tasks[0]->hour)}}</td>
                         <td></td>
                         <td></td>
                         <td></td>

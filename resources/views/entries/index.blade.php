@@ -37,7 +37,7 @@
                             <tr>
                                 <td>{{$entry->id}}</td>
                                 <td>{{$entry->title}}</td>
-                    <td>{{$entry->hour}}</td>
+                    <td>{{number_format($entry->hour)}}</td>
                     <td>{{$entry->pre}}</td>
                     <td>{{$entry->estimated}}</td>
                     <td>{{$entry->accepted}}</td>
