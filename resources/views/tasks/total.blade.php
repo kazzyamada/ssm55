@@ -17,39 +17,39 @@
                 <table class="table table-condensed table-striped">
                     <thead>
                         <tr>
-                        <th>id</th>
-                        <th>title</th>
-                        <th>project_days</th>
-                        <th>project_hour</th>
-                        <th>man_hour</th>
-                        <th>remain</th>
-                        <th>start</th>
-                        <th>end</th>
-                        <th>status</th>
+                        <th class="text-center">id</th>
+                        <th class="text-center">title</th>
+                        <th class="text-right">project_days</th>
+                        <th class="text-right">project_hour</th>
+                        <th class="text-right">man_hour</th>
+                        <th class="text-right">remain</th>
+                        <th class="text-center">start</th>
+                        <th class="text-center">end</th>
+                        <th class="text-center">status</th>
                         </tr>
                     </thead>
 
                     <tbody>
                     @foreach($totals as $total)
                         <tr>
-                        <td>{{$total->id}}</td>
+                        <td class="text-right">{{$total->id}}</td>
                         <td>{{$total->title}}</td>
-                        <td>{{number_format($total->days)}}</td>
-                        <td>{{number_format($total->hour)}}</td>
-                        <td>{{number_format($total->man_hour)}}</td>
-                        <td>{{number_format($total->remain)}}</td>
-                        <td>{{$total->pre}}</td>
-                        <td>{{$total->end}}</td>
+                        <td class="text-right">{{number_format($total->days)}}</td>
+                        <td class="text-right">{{number_format($total->hour)}}</td>
+                        <td class="text-right">{{number_format($total->man_hour)}}</td>
+                        <td class="text-right">{{number_format($total->remain)}}</td>
+                        <td class="text-center">{{$total->pre}}</td>
+                        <td class="text-center">{{$total->end}}</td>
                         <td>{{$total->status}}</td>
                         </tr>
                     @endforeach
                         <tr>
                         <td></td>
-                        <td> --- total ---</td>
-                        <td>{{number_format($tasks[0]->days)}}</td>
-                        <td>{{number_format($entries[0]->hour)}}</td>
-                        <td>{{number_format($tasks[0]->hour)}}</td>
-                        <td>{{number_format($entries[0]->hour-$tasks[0]->hour)}}</td>
+                        <td class="text-center"> --- total ---</td>
+                        <td class="text-right">{{number_format($tasks[0]->days)}}</td>
+                        <td class="text-right">{{number_format($entries[0]->hour)}}</td>
+                        <td class="text-right">{{number_format($tasks[0]->hour)}}</td>
+                        <td class="text-right">{{number_format($entries[0]->hour-$tasks[0]->hour)}}</td>
                         <td></td>
                         <td></td>
                         <td></td>

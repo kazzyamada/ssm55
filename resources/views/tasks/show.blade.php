@@ -41,7 +41,7 @@
                 </div>
                     <div class="form-group">
                      <label for="task_hour">HOUR</label>
-                     <p class="form-control-static">{{$task->task_hour}}</p>
+                     <p class="form-control-static">{{number_format($task->task_hour)}}</p>
                 </div>
             </form>
 
