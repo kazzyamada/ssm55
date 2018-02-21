@@ -18,15 +18,15 @@
                 <table class="table table-condensed table-striped">
                     <thead>
                         <tr>
-                        <th>ID</th>
-                        <th>TITLE</th>
-                        <th>HOUR</th>
-                        <th>PRE</th>
-                        <th>ESTIMATED</th>
-                        <th>ACCEPTED</th>
-                        <th>START</th>
-                        <th>END</th>
-                        <th>MAINTE</th>
+                        <th class="text-right">ID</th>
+                        <th class="text-center">TITLE</th>
+                        <th class="text-right">HOUR</th>
+                        <th class="text-center">PRE</th>
+                        <th class="text-center">ESTIMATED</th>
+                        <th class="text-center">ACCEPTED</th>
+                        <th class="text-center">START</th>
+                        <th class="text-center">END</th>
+                        <th class="text-center">MAINTE</th>
                         <th>STATUS</th>
                         <th class="text-right">OPTIONS</th>
                         </tr>
@@ -35,10 +35,10 @@
                     <tbody>
                         @foreach($entries as $entry)
                         <tr>
-                        <td>{{$entry->id}}</td>
+                        <td class="text-right">{{$entry->id}}</td>
                         <td>{{$entry->title}}</td>
                     	<td class="text-right">{{number_format($entry->hour)}}</td>
-                    	<td>{{$entry->pre}}</td>
+                    	<td class="text-center">{{$entry->pre}}</td>
                     	<td>{{$entry->estimated}}</td>
                     	<td>{{$entry->accepted}}</td>
                     	<td>{{$entry->start}}</td>

@@ -52,7 +52,8 @@ class TaskController extends Controller {
 	public function copy($id)
 	{
 
-#        \Log::debug('id='.$id);
+#        \Log::debug(__METHOD__.LP.RP.C.LP.__LINE__.RP.SP."id=$id");
+
 		$task = Task::findOrFail($id);
 
 		// for select box
@@ -70,7 +71,6 @@ class TaskController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-#        \Log::debug(__METHOD__.'--1--');
         $validator = Validator::make($request->all(), [
             'entry_id' => 'required|numeric|exists:entries,id',
             'log' => 'required|max:255',
@@ -136,22 +136,18 @@ class TaskController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
-        \Log::debug(__METHOD__.'--1--');
         $validator = Validator::make($request->all(), [
             'entry_id' => 'required|numeric|exists:entries,id',
             'log' => 'required|max:255',
             'task_day' => 'required',
             'task_hour' => 'required',
         ]);
-        \Log::debug(__METHOD__.'--2--');
         if ($validator->fails()){
             return redirect('tasks/edit')
                         ->withErrors($validator)
                         ->withInput();
 
         }
-        \Log::debug(__METHOD__.'--3--');
-#        \Log::debug($request);
 		$task = Task::findOrFail($id);
 
 		$task->entry_id = $request->input("entry_id");
