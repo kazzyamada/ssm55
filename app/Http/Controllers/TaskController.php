@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php 
+
+namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -76,16 +78,7 @@ class TaskController extends Controller {
             'log' => 'required|max:255',
             'task_day' => 'required',
             'task_hour' => 'required',
-        ]);
-        if ($validator->fails()){
-#			$errors = $validator->errors();
-#			foreach ($errors->all() as $message) {
-#				echo $message;
-#			}
-            return redirect('tasks/create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
+        ])->validate();
 
 		$task = new Task();
 		$task->entry_id = $request->input("entry_id");
@@ -136,18 +129,15 @@ class TaskController extends Controller {
 	 */
 	public function update(Request $request, $id)
 	{
+#       \Log::debug(__METHOD__.LP.RP.C.LP.__LINE__.RP.SP);
+       \Log::debug(__METHOD__.'--1');
         $validator = Validator::make($request->all(), [
             'entry_id' => 'required|numeric|exists:entries,id',
             'log' => 'required|max:255',
             'task_day' => 'required',
             'task_hour' => 'required',
-        ]);
-        if ($validator->fails()){
-            return redirect('tasks/edit')
-                        ->withErrors($validator)
-                        ->withInput();
+        ])->validate();
 
-        }
 		$task = Task::findOrFail($id);
 
 		$task->entry_id = $request->input("entry_id");
