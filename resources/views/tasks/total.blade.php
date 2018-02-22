@@ -33,7 +33,7 @@
                     @foreach($totals as $total)
                         <tr>
                         <td class="text-right">{{$total->id}}</td>
-                        <td>{{$total->title}}</td>
+                        <td>{{$total->id}}:{{$total->title}}</td>
                         <td class="text-right">{{number_format($total->days)}}</td>
                         <td class="text-right">{{number_format($total->hour)}}</td>
                         <td class="text-right">{{number_format($total->man_hour)}}</td>

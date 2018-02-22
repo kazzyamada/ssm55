@@ -52,13 +52,7 @@ class UserController extends Controller
             'name' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-        ]);
-
-        if ($validator->fails()){
-            return redirect('users/create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
+        ])->validate();
 
         $user = new User();
         $user->name = $request->input("name");
@@ -114,10 +108,7 @@ class UserController extends Controller
             'email' => 'required|email|max:255|unique:users,email,'.$id.',id',
 #            'email' => 'required|email|max:255',
             'password' => 'min:6|confirmed',
-        ]);
-        if ($validator->fails()){
-            $this->throwValidationException($request, $validator);
-        }
+        ])->validate();
 
         $user = User::findOrFail($id);
 

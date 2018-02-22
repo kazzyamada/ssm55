@@ -31,7 +31,7 @@
                         @foreach($tasks as $task)
                         <tr>
                         <td class="text-right">{{$task->id}}</td>
-                        <td>{{$task->entry->title}}</td>
+                        <td>{{$task->entry_id}}:{{$task->entry->title}}</td>
                     	<td>{{$task->log}}</td>
                     	<td class="text-center">{{$task->task_day}}</td>
                     	<td class="text-right">{{number_format($task->task_hour)}}</td>

@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -51,12 +53,7 @@ class EntryController extends Controller {
             'title' => 'required|max:255',
             'hour' => 'required|numeric',
             'status' => 'required|max:255',
-        ]);
-        if ($validator->fails()){
-            return redirect('entries/create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
+        ])->validate();
 
 		$entry->title = $request->input("title");
         $entry->hour = $request->input("hour");
