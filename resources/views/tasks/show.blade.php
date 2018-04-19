@@ -24,8 +24,8 @@
                     <p class="form-control-static"></p>
                 </div>
                 <div class="form-group">
-                     <label for="entries_id">ENTRY_ID</label>
-                     <p class="form-control-static">{{$task->entries_id}}</p>
+                     <label for="entry_id">ENTRY_ID</label>
+                     <p class="form-control-static">{{$task->entry_id}}</p>
                 </div>
                 <div class="form-group">
                      <label for="entry_title">TITLE</label>

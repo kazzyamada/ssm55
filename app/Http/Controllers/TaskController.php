@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use DB;
+
 use App\Entry;
 use App\Task;
 use Validator;
 
 use Illuminate\Http\Request;
+
+const LP='(';
 
 class TaskController extends Controller {
 
@@ -54,7 +56,7 @@ class TaskController extends Controller {
 	public function copy($id)
 	{
 
-#        \Log::debug(__METHOD__.LP.RP.C.LP.__LINE__.RP.SP."id=$id");
+#       \Log::debug(__METHOD__.'():'.__LINE__." id=$id");
 
 		$task = Task::findOrFail($id);
 
