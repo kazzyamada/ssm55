@@ -20,4 +20,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // for simple api test
 Route::get('echo', "AppController@echo1");
 Route::get('total', "AppController@total");
-
