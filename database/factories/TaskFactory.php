@@ -9,7 +9,8 @@ $factory->define(App\Task::class, function (Faker $faker) {
         // id
         // entry_id
 	'entry_id'=>1,
-	'log'=> str_random(10),
+//	'log'=> str_random(10),
+	'log'=> 'tests log 1',
 	'task_day'=> '2018-04-19',
 	'task_hour'=> 1,
 	'created_at'=> '2018-04-19',
