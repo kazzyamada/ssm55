@@ -79,7 +79,7 @@ class TaskController extends Controller {
             'entry_id' => 'required|numeric|exists:entries,id',
             'log' => 'required|max:255',
             'task_day' => 'required',
-            'task_hour' => 'required',
+            'task_hour' => 'required|numeric',
         ])->validate();
 
 		$task = new Task();
@@ -137,7 +137,7 @@ class TaskController extends Controller {
             'entry_id' => 'required|numeric|exists:entries,id',
             'log' => 'required|max:255',
             'task_day' => 'required',
-            'task_hour' => 'required',
+            'task_hour' => 'required|numeric',
         ])->validate();
 
 		$task = Task::findOrFail($id);
